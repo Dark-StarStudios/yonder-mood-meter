@@ -12,12 +12,11 @@ class CR {
             {
                 throw new \Exception($connectie->connect_error);
             }
-            $query = "INSERT INTO gebruikers(mood,wanneer,naam,adres,woonplaats,leeftijd,vooropleiding) VALUES $mood, NOW(), 
-            $naam,$adres,$woonplaats, $leeftijd, $vooropleiding";
+            $query = "INSERT INTO gebruikers(wanneer,mood,naam,adres,woonplaats,leeftijd,vooropleiding) VALUES (NOW(),?,?,?,?,?,?)";
             //Bereid de SQL-query voor en bind de parameters.
             $statement = $connectie->prepare($query);
             // Argumenten binden aan ?
-            $statement->bind_param("sss",$postEmail,$postNaam,$postHash);
+            $statement->bind_param("isssii",$mood,$naam,$adres,$woonplaats, $leeftijd, $vooropleiding);
             // Voer de query uit en controleer op fouten
             if (!$statement->execute())
             {
@@ -39,7 +38,7 @@ class CR {
                     $connectie->close();
                 }
                 // Redirect de gebruiker naar de login pagina
-                header("location: login.php?register=true");
+                // header("location: login.php?register=true");
                 exit(); // Zorg ervoor dat het script stopt na de header redirect
         }
     }
