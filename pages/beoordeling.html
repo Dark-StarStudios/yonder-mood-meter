@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smileys met Selectie</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        svg {
+            cursor: pointer;
+        }
+        .smiley {
+            transition: transform 0.2s ease-in-out, stroke-width 0.2s ease-in-out;
+        }
+        .smiley:hover {
+            transform: scale(1.05); /* Subtiel vergrotingseffect bij hover */
+            stroke-width: 3px;
+        }
+        .selected .checkmark {
+            display: block; /* Toon het vinkje bij selectie */
+        }
+        .checkmark {
+            fill: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<svg width="900" height="250" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250">
+    <!-- Vinkje voor Blije smiley -->
+    <g>
+        <path class="checkmark" id="checkmark-happy" d="M90 40 L100 50 L120 30" fill="none" stroke="green" stroke-width="5"/>
+    </g>
+
+    <!-- Blije smiley -->
+    <g class="smiley" data-id="happy" onclick="selectSmiley('checkmark-happy')">
+        <circle cx="100" cy="150" r="50" fill="limegreen" stroke="black" stroke-width="2"/>
+        <circle cx="80" cy="135" r="7" fill="black"/>
+        <circle cx="120" cy="135" r="7" fill="black"/>
+        <path d="M75,165 Q100,185 125,165" fill="none" stroke="black" stroke-width="3"/>
+    </g>
+
+    <!-- Vinkje voor Licht Blije smiley -->
+    <g>
+        <path class="checkmark" id="checkmark-light-happy" d="M240 40 L250 50 L270 30" fill="none" stroke="green" stroke-width="5"/>
+    </g>
+
+    <!-- Licht Blije smiley -->
+    <g class="smiley" data-id="light-happy" onclick="selectSmiley('checkmark-light-happy')">
+        <circle cx="250" cy="150" r="50" fill="yellowgreen" stroke="black" stroke-width="2"/>
+        <circle cx="230" cy="135" r="7" fill="black"/>
+        <circle cx="270" cy="135" r="7" fill="black"/>
+        <path d="M225,165 Q250,175 275,165" fill="none" stroke="black" stroke-width="3"/>
+    </g>
+
+    <!-- Vinkje voor Neutrale smiley -->
+    <g>
+        <path class="checkmark" id="checkmark-neutral" d="M390 40 L400 50 L420 30" fill="none" stroke="green" stroke-width="5"/>
+    </g>
+
+    <!-- Neutrale smiley -->
+    <g class="smiley" data-id="neutral" onclick="selectSmiley('checkmark-neutral')">
+        <circle cx="400" cy="150" r="50" fill="gold" stroke="black" stroke-width="2"/>
+        <circle cx="380" cy="135" r="7" fill="black"/>
+        <circle cx="420" cy="135" r="7" fill="black"/>
+        <path d="M375,165 L425,165" fill="none" stroke="black" stroke-width="3"/>
+    </g>
+
+    <!-- Vinkje voor Licht Boze smiley -->
+    <g>
+        <path class="checkmark" id="checkmark-light-angry" d="M540 40 L550 50 L570 30" fill="none" stroke="green" stroke-width="5"/>
+    </g>
+
+    <!-- Licht Boze smiley -->
+    <g class="smiley" data-id="light-angry" onclick="selectSmiley('checkmark-light-angry')">
+        <circle cx="550" cy="150" r="50" fill="darkorange" stroke="black" stroke-width="2"/>
+        <circle cx="530" cy="135" r="7" fill="black"/>
+        <circle cx="570" cy="135" r="7" fill="black"/>
+        <path d="M525,165 Q550,150 575,165" fill="none" stroke="black" stroke-width="3"/>
+    </g>
+
+    <!-- Vinkje voor Boze smiley -->
+    <g>
+        <path class="checkmark" id="checkmark-angry" d="M690 40 L700 50 L720 30" fill="none" stroke="green" stroke-width="5"/>
+    </g>
+
+    <!-- Boze smiley -->
+    <g class="smiley" data-id="angry" onclick="selectSmiley('checkmark-angry')">
+        <circle cx="700" cy="150" r="50" fill="crimson" stroke="black" stroke-width="2"/>
+        <circle cx="680" cy="135" r="7" fill="black"/>
+        <circle cx="720" cy="135" r="7" fill="black"/>
+        <path d="M675,165 Q700,140 725,165" fill="none" stroke="black" stroke-width="3"/>
+    </g>
+</svg>
+
+<script>
+    let previousCheckmark = null;
+
+    function selectSmiley(checkmarkId) {
+        // Verberg vorige vinkje
+        if (previousCheckmark) {
+            previousCheckmark.style.display = "none";
+        }
+
+        // Toon het nieuwe vinkje
+        const newCheckmark = document.getElementById(checkmarkId);
+        newCheckmark.style.display = "block";
+
+        // Bewaar de nieuwe vinkje referentie
+        previousCheckmark = newCheckmark;
+
+        // Optioneel: Log welke smiley is geselecteerd
+        console.log('Geselecteerde smiley:', checkmarkId);
+    }
+</script>
+
+</body>
+</html>

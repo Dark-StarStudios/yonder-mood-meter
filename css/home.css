@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+img.logo {
+    width: 570px; /* Pas de grootte aan indien nodig */
+    margin-top: 20px;
+}
+
+.qr-container {
+    position: absolute;
+    bottom: 50px;
+    left: 405px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qr-container img {
+    width: 200px; /* Pas de grootte aan voor de QR-code */
+    height: auto;
+}
+
+.qr-container .text {
+    font-size: 28px; /* Kleine tekst */
+    color: #333;
+}
+
+.cta-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    background-color: #8F88FD;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Inter;
+    width: 250px;
+}
+
+
+.mood-meter{
+    margin-bottom: 25%;
+    font-size: 25px;
+}
+.kleur-balkje {
+    width: 300px;
+    height: 50px;
+    background-color: #FD6555;
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+/* Responsiveness */
+@media (max-width: 768px) {
+    img.logo {
+        margin-top: 44%;
+        width: 330px; /* Verklein logo op kleinere schermen */
+    }
+
+    .qr-container img {
+        width: 60px;
+        margin-left: 500px;
+    }
+
+    .qr-container .text {
+        font-size: 10px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 200px;
+        top: 55%;
+        left: 50%;
+    }
+    .mood-meter{
+        margin-bottom: 75%;
+        font-size: 20px;
+    }
+    .kleur-balkje{
+        top: 10%;
+        height: 40px;
+        width: 200px;
+    }
+}
