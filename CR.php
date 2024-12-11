@@ -1,6 +1,18 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 class CR {
-    private $serverConnectieData = ["localhost","root","","mood-meter"];
+    private $serverConnectieData;
+
+    public function __construct() {
+        $this->serverConnectieData = [
+            $_ENV['DB_HOST'],
+            $_ENV['DB_USER'],
+            $_ENV['DB_PASSWORD'],
+            $_ENV['DB_NAME']
+        ];
+    }
 
     public function create($mood, $naam, $adres, $woonplaats, $leeftijd, $vooropleiding){
         try{
