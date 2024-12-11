@@ -100,3 +100,9 @@ img.logo {
         width: 200px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .qr-container {
+        display: none;
+    }
+}
