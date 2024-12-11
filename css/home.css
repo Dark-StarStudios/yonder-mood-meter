@@ -67,6 +67,79 @@ img.logo {
     top: 30%;
     right: 0;
 }
+/* Media queries */
+
+/* Kleine laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .logo {
+        width: 130px;
+    }
+
+    .mood-meter {
+        font-size: 1.3rem;
+    }
+
+    .cta-btn {
+        font-size: 0.95rem;
+        padding: 9px 18px;
+    }
+
+    .qr-container img {
+        width: 90px;
+    }
+
+    .text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Middelgrote laptops (max-width: 1366px) */
+@media (max-width: 1366px) {
+    .logo {
+        width: 140px;
+    }
+
+    .mood-meter {
+        font-size: 1.4rem;
+    }
+    .cta-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .qr-container img {
+        width: 100px;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+}
+
+/* Grote laptops (min-width: 1367px en max-width: 1920px) */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    .logo {
+        width: 160px;
+    }
+
+    .mood-meter {
+        font-size: 1.6rem;
+    }
+
+    .cta-btn {
+        font-size: 1.1rem;
+        padding: 11px 22px;
+    }
+
+    .qr-container img {
+        width: 110px;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     img.logo {

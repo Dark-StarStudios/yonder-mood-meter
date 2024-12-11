@@ -27,7 +27,6 @@
             display: block; /* Toon het vinkje bij selectie */
         }
         .checkmark {
-            fill: green;
             display: none;
         }
     </style>
@@ -37,7 +36,7 @@
 <svg width="900" height="250" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250">
     <!-- Vinkje voor Blije smiley -->
     <g>
-        <path class="checkmark" id="checkmark-happy" d="M90 40 L100 50 L120 30" fill="none" stroke="green" stroke-width="5"/>
+        <path class="checkmark" id="checkmark-happy" d="M85 45 L95 60 L120 30" fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
     </g>
 
     <!-- Blije smiley -->
@@ -50,7 +49,7 @@
 
     <!-- Vinkje voor Licht Blije smiley -->
     <g>
-        <path class="checkmark" id="checkmark-light-happy" d="M240 40 L250 50 L270 30" fill="none" stroke="green" stroke-width="5"/>
+        <path class="checkmark" id="checkmark-light-happy" d="M235 45 L245 60 L270 30" fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
     </g>
 
     <!-- Licht Blije smiley -->
@@ -63,7 +62,7 @@
 
     <!-- Vinkje voor Neutrale smiley -->
     <g>
-        <path class="checkmark" id="checkmark-neutral" d="M390 40 L400 50 L420 30" fill="none" stroke="green" stroke-width="5"/>
+        <path class="checkmark" id="checkmark-neutral" d="M385 45 L395 60 L420 30" fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
     </g>
 
     <!-- Neutrale smiley -->
@@ -76,7 +75,7 @@
 
     <!-- Vinkje voor Licht Boze smiley -->
     <g>
-        <path class="checkmark" id="checkmark-light-angry" d="M540 40 L550 50 L570 30" fill="none" stroke="green" stroke-width="5"/>
+        <path class="checkmark" id="checkmark-light-angry" d="M535 45 L545 60 L570 30" fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
     </g>
 
     <!-- Licht Boze smiley -->
@@ -89,7 +88,7 @@
 
     <!-- Vinkje voor Boze smiley -->
     <g>
-        <path class="checkmark" id="checkmark-angry" d="M690 40 L700 50 L720 30" fill="none" stroke="green" stroke-width="5"/>
+        <path class="checkmark" id="checkmark-angry" d="M685 45 L695 60 L720 30" fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
     </g>
 
     <!-- Boze smiley -->
@@ -99,6 +98,13 @@
         <circle cx="720" cy="135" r="7" fill="black"/>
         <path d="M675,165 Q700,140 725,165" fill="none" stroke="black" stroke-width="3"/>
     </g>
+
+    <!-- Filter voor schaduw -->
+    <defs>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0, 0, 0, 0.2)"/>
+        </filter>
+    </defs>
 </svg>
 
 <script>
