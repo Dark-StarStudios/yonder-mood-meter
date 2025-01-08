@@ -18,21 +18,19 @@
 <body>
 <img src="../img/logo-yonder.svg" alt="Logo Yonder" class="logo">
      <h3><b>Admin login</b></h3>
-     <div class="container-fluid d-flex flex-column justify-content-between" style="height: 80vh;">
+     <div class="container-fluid d-flex flex-column justify-content-between" style="height: 71vh;">
         <div class="row">
             <div class="col-8" ></div>
             <div class="col-4 bg-dark" ></div>
         </div> 
         <form class="AdminForm container" action="dashboard_admin_login.php" method="post" action="dashboard_admin_login.php">
             <div class="mb-3 mt-3">
-            <input type="text" class="form-control" id="email" placeholder="Gebruikersnaam:" name="gebruikersnaam">
+            <input type="text" class="form-control" placeholder="Gebruikersnaam:" name="gebruikersnaam">
             </div>
             <div class="mb-3">
-            <input type="password" class="form-control" id="pwd" placeholder="Wachtwoord:" name="wachtwoord">
+            <input type="password" class="form-control" placeholder="Wachtwoord:" name="wachtwoord">
             </div>
-            <div class="form-check mb-3">
-            </div>
-            <button type="submit" class="btn bg-paars rounded-0">Verzend</button>
+            <button type="submit" class="btn bg-paars rounded-0 px-5 mt-5">Verzend</button>
         </form>
 
         <div class="row">
@@ -40,7 +38,6 @@
             <div class="col-8 bg-paars" ></div>
             <div class="col-4 bg-rood" ></div>
             <div class="col-8" ></div>
-            <div class="col" ></div>
         </div> 
      </div>
     <!-- div balk 2 paars -->
