@@ -144,7 +144,7 @@ class account{
                     $connectie->close();
                 }
              
-                // header("location: home.php");
+                header("location: Test_test.html");
                 exit(); 
             }
     }
