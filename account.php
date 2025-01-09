@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -123,7 +124,7 @@ class account{
                
                 if($dataNaam === "<error>"){
                 
-                    setcookie("waarschruwing","Verkeerd e-mailadres of geen dergelijk account!",time()+2);
+                    setcookie("waarschruwing","Verkeerde administrator of geen dergelijk account!",time()+2);
                   
                     $_SESSION["login"] = null;
                 } 
@@ -144,7 +145,7 @@ class account{
                     $connectie->close();
                 }
              
-                header("location: Test_test.html");
+                header("location: DashboardAlgemeen.php");
                 exit(); 
             }
     }

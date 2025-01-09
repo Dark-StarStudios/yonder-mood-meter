@@ -22,8 +22,14 @@
         <div class="row">
             <div class="col-8" ></div>
             <div class="col-4 bg-dark" ></div>
-        </div> 
+        </div>
+        
         <form class="AdminForm container" action="dashboard_admin_login.php" method="post" action="dashboard_admin_login.php">
+            <?php
+            if(isset($_COOKIE["waarschruwing"])){
+                echo "<div class='alert alert-info'><h4>" . $_COOKIE["waarschruwing"] . "<h4></div>";
+            }
+            ?>
             <div class="mb-3 mt-3">
             <input type="text" class="form-control" placeholder="Gebruikersnaam:" name="gebruikersnaam">
             </div>
