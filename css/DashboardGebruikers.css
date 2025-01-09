@@ -1,6 +1,15 @@
+/* font? */
 .logo{
     width: 300px;
     margin: 20px;
+}
+h3{
+    margin-left: 20px;
+}
+.AdminForm input{
+    border: none;
+    border-radius: 0;
+    border-bottom: black 1px solid;
 }
 .bg-paars{
     color: white;
@@ -11,14 +20,4 @@
 }
 .row div{
     height: 35px;
-}
-.bg-zwart{
-    background-color: black;
-}
-.dashboardH1{
-    float: right;
-    margin: 25px;
-}
-.algemeen{
-    color: #8F88FD;
 }
