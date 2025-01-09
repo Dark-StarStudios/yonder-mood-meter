@@ -17,9 +17,9 @@
             <div class="col-4 bg-paars" ></div>
         </div> 
 
-        <h1 class="algemeen">algemeen</h1>
-        <h1>gebruikers</h1>
-        <h1>admin</h1>
+        <a class="algemeen" href="DashboardAlgemeen.php">Algemeen</a>
+        <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
+        <a class="admin" href="dashboardAdmin.php">admin</a>
 
         <div class="row">
             <div class="col-4 bg-rood" ></div>

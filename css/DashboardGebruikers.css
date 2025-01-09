@@ -21,3 +21,21 @@ h3{
 .row div{
     height: 35px;
 }
+a{
+    color: black;
+    font-weight: bold;
+    font-size: 24pt;
+    text-decoration: none;
+}
+.gebruikers{
+    color: #FD6555;
+}
+.admin:hover{
+    color: #FD6555;
+}
+.gebruikers:hover{
+    color: #FD6555;
+}
+.algemeen:hover{
+    color: #8F88FD;
+}
