@@ -21,6 +21,39 @@
             <div class="col-4 bg-paars" ></div>
         </div> 
 
+        <div class="smileys-container">
+            <svg class="smiley" data-id="happy" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
+                <circle cx="40" cy="40" r="40" fill="limegreen"/>
+                <circle cx="30" cy="30" r="6" fill="black"/>
+                <circle cx="50" cy="30" r="6" fill="black"/>
+                <path d="M25,55 Q40,65 55,55" fill="none" stroke="black" stroke-width="3"/>
+            </svg>
+            <svg class="smiley" data-id="light-happy" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
+                <circle cx="40" cy="40" r="40" fill="yellowgreen"/>
+                <circle cx="30" cy="30" r="6" fill="black"/>
+                <circle cx="50" cy="30" r="6" fill="black"/>
+                <path d="M25,55 Q40,60 55,55" fill="none" stroke="black" stroke-width="3"/>
+            </svg>
+            <svg class="smiley" data-id="neutral" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
+                <circle cx="40" cy="40" r="40" fill="gold"/>
+                <circle cx="30" cy="30" r="6" fill="black"/>
+                <circle cx="50" cy="30" r="6" fill="black"/>
+                <path d="M25,60 L55,60" fill="none" stroke="black" stroke-width="3"/>
+            </svg>
+            <svg class="smiley" data-id="light-angry" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
+                <circle cx="40" cy="40" r="40" fill="darkorange"/>
+                <circle cx="30" cy="30" r="6" fill="black"/>
+                <circle cx="50" cy="30" r="6" fill="black"/>
+                <path d="M25,60 Q40,50 55,60" fill="none" stroke="black" stroke-width="3"/>
+            </svg>
+            <svg class="smiley" data-id="angry" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
+                <circle cx="40" cy="40" r="40" fill="crimson"/>
+                <circle cx="30" cy="30" r="6" fill="black"/>
+                <circle cx="50" cy="30" r="6" fill="black"/>
+                <path d="M25,60 Q40,45 55,60" fill="none" stroke="black" stroke-width="3"/>
+            </svg>
+        </div>
+
         <a class="algemeen" href="DashboardAlgemeen.php">Algemeen</a>
         <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
         <a class="admin" href="dashboardAdmin.php">admin</a>
