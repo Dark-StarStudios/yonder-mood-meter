@@ -35,6 +35,8 @@ img.logo {
 }
 
 .cta-btn {
+    text-align: center;
+    text-decoration: none;
     padding: 15px 30px;
     background-color: #8F88FD;
     color: white;
@@ -48,6 +50,7 @@ img.logo {
 }
 .cta-btn:hover {
     background-color: #4d4896;
+    color: white;
 }
 .kleur-balkje {
     width: 300px;

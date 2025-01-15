@@ -14,7 +14,7 @@ class CR {
         ];
     }
 
-    public function create($mood, $naam, $adres, $woonplaats, $leeftijd, $vooropleiding){
+    public function create($mood, $naam, $adres, $woonplaats, $leeftijd, $vooropleiding, $opleiding){
         try{
             $connectie = new \mysqli($this->serverConnectieData[0], 
             $this->serverConnectieData[1],
@@ -24,11 +24,11 @@ class CR {
             {
                 throw new \Exception($connectie->connect_error);
             }
-            $query = "INSERT INTO gebruikers(wanneer,mood,naam,adres,woonplaats,leeftijd,vooropleiding) VALUES (NOW(),?,?,?,?,?,?)";
+            $query = "INSERT INTO gebruikers(wanneer,mood,naam,adres,woonplaats,leeftijd,vooropleiding, opleiding) VALUES (NOW(),?,?,?,?,?,?,?)";
             //Bereid de SQL-query voor en bind de parameters.
             $statement = $connectie->prepare($query);
             // Argumenten binden aan ?
-            $statement->bind_param("isssii",$mood,$naam,$adres,$woonplaats, $leeftijd, $vooropleiding);
+            $statement->bind_param("ssssiss",$mood,$naam,$adres,$woonplaats, $leeftijd, $vooropleiding, $opleiding);
             // Voer de query uit en controleer op fouten
             if (!$statement->execute())
             {
@@ -50,7 +50,7 @@ class CR {
                     $connectie->close();
                 }
                 // Redirect de gebruiker naar de login pagina
-                // header("location: login.php?register=true");
+                header("location: beoordeling.php?register=true");
                 exit(); // Zorg ervoor dat het script stopt na de header redirect
         }
     }
