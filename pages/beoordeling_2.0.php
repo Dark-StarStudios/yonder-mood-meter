@@ -13,8 +13,7 @@
             height: 100vh;
             margin: 0;
             padding-top: 150px;
-
-
+            overflow: hidden; /* Voeg deze regel toe */
         }
 
         .smileys-container {
@@ -38,27 +37,7 @@
 
         }
 
-        form {
-            width: 100%;
-            max-width: 700px;
-            padding: 30px;
-            border-radius: 8px;
-        }
 
-        .form-container {
-            display: block;
-        }
-
-        .form-item {
-            width: 110%;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
 
         input, select {
             width: 100%;
@@ -80,31 +59,15 @@
         }
 
         .submit-btn {
-            width: 30%;
+            width: 15%;
             padding: 15px;
             background-color: #8F88FD;
             color: white;
             border: none;
             cursor: pointer;
             font-size: 18px;
-            margin-top: 15px;
+            margin-top: 55px;
         }
-
-        #course{
-            width: 30%;
-            background-color: #D9D9D9;
-        }
-        #education{
-            width: 30%;
-            background-color: #D9D9D9;
-        }
-        .logo{
-            height: auto;
-            width: 300px;
-            margin-right: 75%;
-            margin-top: -7%;
-        }
-
         .kleur-balkje {
             width: 300px;
             height: 50px;
@@ -118,27 +81,28 @@
             height: 50px;
             background-color: black;
             position: absolute;
-            top: 85%;
+            top: 73%;
             right: 0;
         }
         .kleur-balkje3 {
-            width: 350px;
+            width: 850px;
             height: 50px;
             background-color: #FD6555;
             position: absolute;
             top: 66%;
-            right: 78%;
+            right: 45.5%;
         }
-
+        .logo{
+            height: auto;
+            width: 300px;
+            margin-right: 75%;
+            margin-top: -7%;
+        }
         @media (max-width: 600px) {
-            form {
-                width: 100%;
-                padding: 20px;
-            }
 
             .submit-btn {
                 font-size: 16px;
-
+                width: 150px;
             }
 
             .smileys-container {
@@ -146,9 +110,9 @@
             }
             .logo{
                 margin-left: 200px;
-
+                margin-bottom: -1px;
             }
-    
+
             svg{
                 width: 60px;
                 height: 60px;
@@ -162,21 +126,27 @@
                 right: 0;
             }
             .kleur-balkje2 {
-                width: 200px;
+                width: 252px;
                 height: 40px;
                 background-color: black;
                 position: absolute;
-                top: 95%;
+                top: 83%;
                 right: 0;
             }
             .kleur-balkje3 {
-                display: none;
+                width: 200px;
+                height: 40px;
+                background-color: #FD6555;
+                position: absolute;
+                top: 77.4%;
+                right: 55.8%;
             }
         }
     </style>
 </head>
 <body>
 <img class="logo" src="../img/logo-yonder.svg" alt="fortnite">
+
 <div class="smileys-container">
     <svg class="smiley" data-id="happy" width="80" height="80" xmlns="http://www.w3.org/2000/svg" onclick="selectSmiley(this)">
         <circle cx="40" cy="40" r="40" fill="limegreen"/>
@@ -209,56 +179,7 @@
         <path d="M25,60 Q40,45 55,60" fill="none" stroke="black" stroke-width="3"/>
     </svg>
 </div>
-
-<form action="#" method="POST" onsubmit="return validateSmileySelection()">
-    <div class="form-container">
-        <div class="form-item">
-            <label for="name"></label>
-            <input placeholder="Naam:" type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-item">
-            <label for="age"></label>
-            <input placeholder="Leeftijd:" type="number" id="age" name="age" required>
-        </div>
-
-        <div class="form-item">
-            <label for="address"></label>
-            <input placeholder="Adres:" type="text" id="address" name="address" required>
-        </div>
-
-        <div class="form-item">
-            <label for="city"></label>
-            <input placeholder="Woonplaats:" type="text" id="city" name="city" required>
-        </div>
-
-        <div class="form-item">
-            <label for="education">Vooropleiding:</label>
-            <select id="education" name="education" required>
-                <option value="">Kies</option>
-                <option value="havo">Havo</option>
-                <option value="vwo">Vwo</option>
-                <option value="mbo">MBO</option>
-                <option value="hbo">HBO</option>
-            </select>
-        </div>
-        
-        <div class="form-item">
-            <label for="course">Opleiding:</label>
-            <select id="course" name="course" required>
-                <option value="">Kies</option>
-                <option value="software-development">Software Development</option>
-                <option value="ICT">ICT</option>
-                <option value="media-design">Media Design</option>
-                <option value="web-development">Web Development</option>
-            </select>
-        </div>
-    </div>
-
-
-
     <button type="submit" class="submit-btn">Verstuur</button>
-</form>
 <div class="kleur-balkje"></div>
 <div class="kleur-balkje2"></div>
 <div class="kleur-balkje3"></div>
