@@ -7,8 +7,8 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -19,9 +19,6 @@ img.logo {
 }
 
 .qr-container {
-    position: absolute;
-    bottom: 50px;
-    left: 405px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -38,10 +35,6 @@ img.logo {
 }
 
 .cta-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding: 15px 30px;
     background-color: #8F88FD;
     color: white;
@@ -50,14 +43,11 @@ img.logo {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: Inter;
+    font-family: Arial, Helvetica, sans-serif;
     width: 250px;
 }
-
-
-.mood-meter{
-    margin-bottom: 25%;
-    font-size: 25px;
+.cta-btn:hover {
+    background-color: #4d4896;
 }
 .kleur-balkje {
     width: 300px;
@@ -67,79 +57,6 @@ img.logo {
     top: 30%;
     right: 0;
 }
-/* Media queries */
-
-/* Kleine laptops (max-width: 1024px) */
-@media (max-width: 1024px) {
-    .logo {
-        width: 130px;
-    }
-
-    .mood-meter {
-        font-size: 1.3rem;
-    }
-
-    .cta-btn {
-        font-size: 0.95rem;
-        padding: 9px 18px;
-    }
-
-    .qr-container img {
-        width: 90px;
-    }
-
-    .text {
-        font-size: 0.95rem;
-    }
-}
-
-/* Middelgrote laptops (max-width: 1366px) */
-@media (max-width: 1366px) {
-    .logo {
-        width: 140px;
-    }
-
-    .mood-meter {
-        font-size: 1.4rem;
-    }
-    .cta-btn {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .qr-container img {
-        width: 100px;
-    }
-
-    .text {
-        font-size: 1rem;
-    }
-}
-
-/* Grote laptops (min-width: 1367px en max-width: 1920px) */
-@media (min-width: 1367px) and (max-width: 1920px) {
-    .logo {
-        width: 160px;
-    }
-
-    .mood-meter {
-        font-size: 1.6rem;
-    }
-
-    .cta-btn {
-        font-size: 1.1rem;
-        padding: 11px 22px;
-    }
-
-    .qr-container img {
-        width: 110px;
-    }
-
-    .text {
-        font-size: 1.1rem;
-    }
-}
-
 /* Responsiveness */
 @media (max-width: 768px) {
     img.logo {
@@ -155,27 +72,15 @@ img.logo {
     .qr-container .text {
         font-size: 10px;
     }
-
-    .cta-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-        width: 200px;
-        top: 55%;
-        left: 50%;
-    }
-    .mood-meter{
-        margin-bottom: 75%;
-        font-size: 20px;
-    }
     .kleur-balkje{
         top: 10%;
         height: 40px;
         width: 200px;
     }
-}
-
-@media screen and (max-width: 768px) {
     .qr-container {
         display: none;
+    }
+    body{
+        justify-content: space-around;
     }
 }
