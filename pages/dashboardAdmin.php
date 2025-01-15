@@ -25,6 +25,21 @@
         <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
         <a class="admin" href="dashboardAdmin.php">admin</a>
 
+        <form class="AdminForm container" action="dashboardAdmin.php" method="post" action="dashboardAdmin.php">
+            <?php
+            if(isset($_COOKIE["waarschruwing"])){
+                echo "<div class='alert alert-info'><h4>" . $_COOKIE["waarschruwing"] . "<h4></div>";
+            }
+            ?>
+            <div class="mb-3 mt-3">
+            <input type="text" class="form-control" placeholder="Gebruikersnaam:" name="gebruikersnaam">
+            </div>
+            <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Wachtwoord:" name="wachtwoord">
+            </div>
+            <button type="submit" class="btn bg-paars rounded-0 px-5 mt-5">nieuw account aanmaken</button>
+        </form>
+
         <div class="row">
             <div class="col-4 bg-rood" ></div>
             <div class="col-8" ></div>
