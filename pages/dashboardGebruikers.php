@@ -21,9 +21,30 @@
             <div class="col-4 bg-paars" ></div>
         </div> 
 
-        <a class="algemeen" href="DashboardAlgemeen.php">Algemeen</a>
-        <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
-        <a class="admin" href="dashboardAdmin.php">admin</a>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column">
+                <a class="algemeen" href="DashboardAlgemeen.php">Algemeen</a>
+                <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
+                <a class="admin" href="dashboardAdmin.php">admin</a>
+            </div>
+            <table>
+                <th>ID</th>
+                <th>Mood</th>
+                <th>Datum</th>
+                <th>Naam</th>
+                <th>Adres</th>
+                <th>Woonplaats</th>
+                <th>Leeftijd</th>
+                <th>Vooropleiding</th>
+                <th>Opleiding</th>
+                <?php
+                require_once "../CR.php";
+                $cr = new CR();
+                // var_dump($cr->read());
+                $cr->read();
+                ?>
+            </table>
+        </div>
 
         <div class="row">
             <div class="col-4 bg-rood" ></div>
