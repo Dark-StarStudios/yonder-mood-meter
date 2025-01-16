@@ -110,7 +110,9 @@ ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry'
             }
         }
 
-        return $result; // Возвращаем массив
+       if($result){
+        return $result;
+       } // Возвращаем массив
     }
 
     public function read($query = "SELECT * FROM gebruikers"){
@@ -130,12 +132,25 @@ ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry'
             {
                 throw new \Exception($connectie->error);
             }
-            $statement->store_result();
+            $statement->bind_result($id, $wanneer, $mood, $naam, $adres, $woonplaats, $leeftijd, $vooropleiding, $opleiding);
+            while ($statement->fetch()){
+                echo "<tr>
+                <td>$id</td>
+                <td>$wanneer</td>
+                <td>$mood</td>
+                <td>$naam</td>
+                <td>$adres</td>
+                <td>$woonplaats</td>
+                <td>$leeftijd</td>
+                <td>$vooropleiding</td>
+                <td>$opleiding</td>
+                </tr>";
+            }
         }
         catch(\Exception $e)
         {
             //Als er fouten zijn, komt de volgende melding: 
-            echo "<div class='alert alert-warning'><h4>Oops: Is het iets met de Server!</h4></div>"; //. $e->getMessage();
+            echo "<div class='alert alert-warning'><h4>Oops: Is het iets met de Server!</h4></div>". $e->getMessage();
         }
         finally
         {
@@ -145,6 +160,9 @@ ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry'
                 } 
                 if($connectie){
                     $connectie->close();
+                }
+                if(isset($result)){
+                    return $result;
                 }
                 // Redirect de gebruiker naar de login pagina
                 // header("location: login.php?register=true");
