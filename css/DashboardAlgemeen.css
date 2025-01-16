@@ -37,3 +37,10 @@ a{
 .algemeen:hover{
     color: #8F88FD;
 }
+.smiley{
+    margin: 10px;
+}
+.DIVChart{
+    width: 80vw;
+    height: 20vh;
+}
