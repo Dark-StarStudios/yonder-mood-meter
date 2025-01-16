@@ -10,11 +10,11 @@
     ?>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/dashboardGebruikers.css">
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <img src="../img/logo-yonder.svg" alt="Logo Yonder" class="logo">
-    <H1 class="dashboardH1">dashboard</H1>
+    <H1 class="dashboardH1">Dashboard</H1>
      <div class="container-fluid d-flex flex-column justify-content-between" style="height: 71vh;">
         <div class="row">
             <div class="col-8" ></div>

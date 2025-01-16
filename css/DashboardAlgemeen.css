@@ -40,14 +40,12 @@ a{
 .algemeen:hover{
     color: #8F88FD;
 }
-.smileys-container {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin: 30px 0;
-    position: relative;
-    right: -700px;
-}
 
+.smiley{
+    margin: 10px;
+}
+.DIVChart{
+    width: 80vw;
+    height: 20vh;
+}
 

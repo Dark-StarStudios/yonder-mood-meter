@@ -54,7 +54,66 @@ class CR {
                 exit(); // Zorg ervoor dat het script stopt na de header redirect
         }
     }
-    public function read(){
+    public function Totaalmood($query = "WITH moods AS (
+    SELECT 'happy' AS mood
+    UNION ALL
+    SELECT 'light-happy'
+    UNION ALL
+    SELECT 'neutral'
+    UNION ALL
+    SELECT 'light-angry'
+    UNION ALL
+    SELECT 'angry'
+)
+SELECT m.mood, COUNT(g.mood) AS count
+FROM moods m
+LEFT JOIN gebruikers g ON m.mood = g.mood
+GROUP BY m.mood
+ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry');
+")
+    {
+        $result = []; // Массив для хранения результата
+
+        try {
+            $connectie = new \mysqli(
+                $this->serverConnectieData[0], 
+                $this->serverConnectieData[1],
+                $this->serverConnectieData[2],
+                $this->serverConnectieData[3]
+            );
+
+            if ($connectie->connect_error) {
+                throw new \Exception($connectie->connect_error);
+            }
+
+            // Подготовка и выполнение SQL-запроса
+            $statement = $connectie->prepare($query);
+            if (!$statement->execute()) {
+                throw new \Exception($statement->error);
+            }
+
+            // Получение результата
+            $resultData = $statement->get_result();
+            while ($row = $resultData->fetch_assoc()) {
+                $result[$row['mood']] = (int)$row['count']; // Добавляем mood и count в массив
+            }
+        } catch (\Exception $e) {
+            // Обработка ошибок
+            echo "<div class='alert alert-warning'><h4>Oops: Is het iets met de Server!</h4></div>";
+        } finally {
+            // Закрытие соединений
+            if (isset($statement) && $statement) {
+                $statement->close();
+            }
+            if (isset($connectie) && $connectie) {
+                $connectie->close();
+            }
+        }
+
+        return $result; // Возвращаем массив
+    }
+
+    public function read($query = "SELECT * FROM gebruikers"){
         try{
             $connectie = new \mysqli($this->serverConnectieData[0], 
             $this->serverConnectieData[1],
@@ -64,7 +123,6 @@ class CR {
             {
                 throw new \Exception($connectie->connect_error);
             }
-            $query = "SELECT * FROM gebruikers";
             //Bereid de SQL-query voor en bind de parameters.
             $statement = $connectie->prepare($query);
             // Voer de query uit en controleer op fouten
@@ -72,6 +130,7 @@ class CR {
             {
                 throw new \Exception($connectie->error);
             }
+            $statement->store_result();
         }
         catch(\Exception $e)
         {
