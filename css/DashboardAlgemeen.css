@@ -27,8 +27,6 @@ a{
     font-weight: bold;
     font-size: 24pt;
     text-decoration: none;
-    position: relative;
-    bottom: 170px;
     margin-left: 30px;
 }
 .admin:hover{

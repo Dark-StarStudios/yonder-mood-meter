@@ -14,8 +14,8 @@
 </head>
 <body>
 <img src="../img/logo-yonder.svg" alt="Logo Yonder" class="logo">
-    <H1 class="dashboardH1">Dashboard</H1>
-     <div class="container-fluid d-flex flex-column justify-content-between" style="height: 71vh;">
+    <H1 class="dashboardH1 mx-2">Dashboard</H1>
+     <div class="container-fluid d-flex flex-column justify-content-between">
         <div class="row">
             <div class="col-8" ></div>
             <div class="col-4 bg-paars" ></div>
@@ -27,7 +27,7 @@
                 <a class="gebruikers" href="dashboardGebruikers.php">gebruikers</a>
                 <a class="admin" href="dashboardAdmin.php">admin</a>
             </div>
-            <table>
+            <table class="table table-striped mx-3 mt-5">
                 <th>ID</th>
                 <th>Mood</th>
                 <th>Datum</th>
@@ -40,8 +40,7 @@
                 <?php
                 require_once "../CR.php";
                 $cr = new CR();
-                // var_dump($cr->read());
-                $cr->read();
+                $cr->readGebruikers();
                 ?>
             </table>
         </div>

@@ -115,7 +115,7 @@ ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry'
        } // Возвращаем массив
     }
 
-    public function read($query = "SELECT * FROM gebruikers"){
+    public function readGebruikers($query = "SELECT * FROM gebruikers"){
         try{
             $connectie = new \mysqli($this->serverConnectieData[0], 
             $this->serverConnectieData[1],
@@ -144,6 +144,54 @@ ORDER BY FIELD(m.mood, 'happy', 'light-happy', 'neutral', 'light-angry', 'angry'
                 <td>$leeftijd</td>
                 <td>$vooropleiding</td>
                 <td>$opleiding</td>
+                </tr>";
+            }
+        }
+        catch(\Exception $e)
+        {
+            //Als er fouten zijn, komt de volgende melding: 
+            echo "<div class='alert alert-warning'><h4>Oops: Is het iets met de Server!</h4></div>". $e->getMessage();
+        }
+        finally
+        {
+                // Sluit de statement en de connectie
+                if($statement){
+                    $statement->close();
+                } 
+                if($connectie){
+                    $connectie->close();
+                }
+                if(isset($result)){
+                    return $result;
+                }
+                // Redirect de gebruiker naar de login pagina
+                // header("location: login.php?register=true");
+                exit(); // Zorg ervoor dat het script stopt na de header redirect
+        }
+    }
+    public function readAdmins($query = "SELECT * FROM admins"){
+        try{
+            $connectie = new \mysqli($this->serverConnectieData[0], 
+            $this->serverConnectieData[1],
+            $this->serverConnectieData[2],
+            $this->serverConnectieData[3]);
+            if ($connectie->error)
+            {
+                throw new \Exception($connectie->connect_error);
+            }
+            //Bereid de SQL-query voor en bind de parameters.
+            $statement = $connectie->prepare($query);
+            // Voer de query uit en controleer op fouten
+            if (!$statement->execute())
+            {
+                throw new \Exception($connectie->error);
+            }
+            $statement->bind_result($id,$naam, $hash);
+            while ($statement->fetch()){
+                echo "<tr>
+                <td>$id</td>
+                <td>$naam</td>
+                <td>$hash</td>
                 </tr>";
             }
         }

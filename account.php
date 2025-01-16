@@ -1,5 +1,8 @@
 <?php
-session_start();
+// is session gestart?
+if(!isset($_SESSION)){
+    session_start();
+}
 require __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -70,7 +73,7 @@ class account{
                     $connectie->close();
                 }
                 
-                // header("location: login.php?register=true");
+                header("location: dashboardAdmin.php?register=true");
                 exit(); 
         }
     }
